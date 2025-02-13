@@ -1,0 +1,363 @@
+<!doctype>
+<html>
+<head>
+
+	<!-- Place this data between the <head> tags of your website -->
+	<title>it's a(door)able</title>
+	<meta name="description" content="a one-minute minigame."/>
+	<link rel="icon" type="image/png" href="favicon.png">
+	<meta charset="UTF-8">
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="it's a(door)able">
+	<meta itemprop="description" content="a one-minute minigame.">
+	<meta itemprop="image" content="http://ncase.me/door/thumbnail.png">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="it's a(door)able">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/door/">
+	<meta property="og:image" content="http://ncase.me/door/thumbnail.png">
+	<meta property="og:description" content="a one-minute minigame.">
+	<meta property="og:site_name" content="it's a(door)able">
+
+	<!-- Style -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+	<div id="loading"><div>LOADING</div></div>
+
+	<div id="whole_container">
+
+		<!--span style="display:none"-->
+		<div id="screen_one">
+			<canvas id="canvas_intro"></canvas>
+		</div>
+
+		<div id="screen_two">
+			<div id="canvas_container">
+
+				<canvas id="canvas_1" width="300" height="380"></canvas>
+				<canvas id="canvas_2" width="300" height="380"></canvas>
+				<canvas id="canvas_3" width="300" height="380" style="margin:0"></canvas>
+
+				<div id="valentines_text"></div>
+				<div id="rewind_text">Lets see how you complete :)</div>
+				<div id="replay_text">Oh Noo! What you wrote with your steps !?</div>
+
+			</div>
+		</div>
+		<!--/span-->
+
+		<div id="screen_three">
+			<div id="screen_three_background"></div>
+			<div id="glassmorphism"></div>
+			<div class="falling-svgs-container"></div>
+
+			<div class="container" style="z-index: 5">
+				<div class="one">
+					<h1 class="one" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">
+						<span id="name"></span>
+					</h1>
+					<p class="two" id="greetingText" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;"></p>
+				</div>
+				<div class="three">
+					<p style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;" >ՇՆՈՐՀԱՎՈՐ ՎԱԼԵՆՏԻՆԴ ԳԺՈՒԿԿԿԿԿ</p>
+				</div>
+				<div class="four">
+					<div class="text-box" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">
+						<p class="hbd-chatbox">
+							Ես քեզ շատ եմ սիրում, ԱՊՐԵՍ, որ կաս ու իմ հետ եսսսս։
+						</p>
+						<p class="fake-btn">Send</p>
+					</div>
+				</div>
+				<div class="five">
+					<p class="idea-1" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">Ուզում էի սկզբում ուղղակի շնորհավորեի</p>
+					<p class="idea-2" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">Բայց հետո ասեցի - չէ՝ մի րոպե․․․</p>
+					<p class="idea-3" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">
+						Հասկացա, որ ինչ-որ բան եմ ուզում անեմ, բայց  <span style="margin-left: 10px;"><strong>ՅՈՒՐԱՀԱՏՈՒԿ</strong></span>.
+					</p>
+					<p class="idea-4" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">Որովհետևևևև...</p>
+					<p class="idea-5" style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">
+						Դու ես ՅՈՒՐԱՀԱՏՈՒԿ
+						<span>:)</span>
+					</p>
+					<p class="idea-6" style="display: inline-block; padding: 10px; border-radius: 10px;">
+						<span>Ի</span>
+						<span>ՏԱԿ</span>
+					</p>
+				</div>
+				<div class="six">
+					<img src="assets/kyanqs.jpg" alt="" class="girl-dp" id="imagePath" />
+					<div class="wish">
+						<h3 class="wish-hbd" style="display: inline-block; padding: 10px; border-radius: 10px;">Happy Valentine's Day Nanushik</h3>
+						<h5 id="wishText"style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">Love U so much :*</h5>
+					</div>
+				</div>
+				<div class="seven">
+					<div class="baloons">
+						<img src="assets/balloon.svg" alt="" />
+						<img src="assets/smiling.svg" alt="" />
+						<img src="assets/svgs/1%20(1).svg" alt="" />
+						<img src="assets/svgs/1%20(2).svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/balloon.svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/balloon.svg" alt="" />
+						<img src="assets/music-note.svg" alt="" />
+						<img src="assets/svgs/1%20(3).svg" alt="" />
+						<img src="assets/svgs/1%20(4).svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/balloon.svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/balloon.svg" alt="" />
+						<img src="assets/svgs/1%20(5).svg" alt="" />
+						<img src="assets/svgs/1%20(6).svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/music-note.svg" alt="" />
+						<img src="assets/smiling.svg" alt="" />
+						<img src="assets/happy.svg" alt="" />
+						<img src="assets/balloon.svg" alt="" />
+						<img src="assets/heart.svg" alt="" />
+						<img src="assets/svgs/1%20(7).svg" alt="" />
+                        <img src="assets/happy.svg" alt="" />
+						<img src="assets/svgs/1%20(1).svg" alt="" />
+						<img src="assets/svgs/1%20(2).svg" alt="" />
+					</div>
+				</div>
+				<div class="eight">
+					<svg viewBox="0 0 40 40">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+					<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="20" cy="20" r="20" />
+					</svg>
+				</div>
+				<div class="nine">
+					<p style="display: inline-block; padding: 10px; border-radius: 10px; background-color: white;">Հիմա կարաս էլ չնայես ու ասես դուրդ եկավ թե՞ չէ </p>
+					<p id="replay" style="display: none"></p>
+					<p class="last-smile" style="display: inline-block; padding-top: 10px; width: 50px; height: 50px; text-align: -webkit-match-parent; border-radius: 10px; background-color: white;">:)</p>
+				</div>
+			</div>
+
+
+
+
+			<div id="bottom" style="display: none">
+				<a href="https://twitter.com/ncasenmare">made by @ncasenmare</a>
+				|
+				<a href="https://github.com/ncase/door">open source code</a>
+			</div>
+
+			<div id="end_container" style="display: none">
+
+				<span style="font-size:38px;">P.S: you can add your own personal message!</span>
+				<input id="your_message" placeholder="(enter lovely message)"></input>
+
+				<span>then just copy &amp; send this link to your lover(s):</span>
+				<input id="your_link" readonly></input>
+
+				<span>or, if you wanna send your message out to everyone:</span>
+				<div id="share">
+					<div id="share_facebook" onclick="return socialShare.call(this,event,'facebook');"></div>
+					<div id="share_twitter" onclick="return socialShare.call(this,event,'twitter');"></div>
+					<div id="share_plus" onclick="return socialShare.call(this,event,'plus');"></div>
+					<div id="share_tumblr" onclick="return socialShare.call(this,event,'tumblr');"></div>
+					<div id="share_reddit" onclick="return socialShare.call(this,event,'reddit');"></div>
+					<div id="share_stumbleupon" onclick="return socialShare.call(this,event,'stumbleupon');"></div>
+				</div>
+
+				<span style="font-size:10px;color: #999;">
+					<span style="font-size: 19px;">and lastly, if you wanna show this</span>
+					<br>
+					<span style="font-size: 16px;">minigame's creator some love, you can</span>
+					<br>
+					<a href="https://www.patreon.com/ncase" target="_blank" style="text-decoration: none;">
+						<div id="support">support me on patreon</div>
+					</a>
+					<span style="font-size: 24px;">so I can keep making free</span>
+					<br>
+					<span style="font-size: 20px;">open-source playable silliness.</span>
+				</span>
+
+				<br>
+				<br>
+
+				<span style="font-size:30px">
+					thanks for playing! &lt;3
+				</span>
+
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
+<script src="js/Key.js"></script>
+<script src="js/game.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/soundjs-0.6.0.min.js"></script>
+<script type="text/babel" src="js/main.js"></script>
+<script>
+	const grid = document.getElementById("screen_three_background");
+	const personalPhotos = new Array(20).fill(null).map((_, index) => `assets/our/1 (${index + 1}).jpg`);
+	const rows = 4;
+	const cols = 5;
+
+	let delayCounter = 0;
+
+	for (let row = 0; row < rows; row++) {
+		for (let col = 0; col < cols; col++) {
+			let index = row * cols + col;
+			let photo = personalPhotos[index % personalPhotos.length]; // Loop through personal photos
+			let gridItem = document.createElement("div");
+			gridItem.className = "grid-item";
+
+			// Each tile flips 0.5s after the previous one
+			let delay = delayCounter * 0.5;
+			delayCounter++;
+
+			gridItem.innerHTML = `
+                    <div class="flip-box" style="animation-delay: ${delay}s;">
+                        <div class="front"></div>
+                        <div class="back" style="background-image: url('${photo}')"></div>
+                    </div>
+                `;
+
+			grid.appendChild(gridItem);
+		}
+	}
+</script>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const screenThree = document.getElementById("screen_three");
+
+		if ("IntersectionObserver" in window) {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						console.log("Screen Three is in view!");
+						startMainScript(); // Call function from main.js
+					}
+				});
+			}, { threshold: 0.5 });
+
+			observer.observe(screenThree);
+		}
+	});
+
+	function startMainScript() {
+		resolveFetch().then(animationTimeline());
+	}
+
+	// Falling SVGs animation
+	document.addEventListener("DOMContentLoaded", function() {
+		const screenThree = document.getElementById('screen_three');
+		const svgContainer = document.createElement('div');
+		svgContainer.className = 'falling-svgs-container';
+		document.body.appendChild(svgContainer);
+
+		// Настройка Intersection Observer
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					startFallingAnimation();
+				} else {
+					resetFallingAnimation();
+				}
+			});
+		}, { threshold: 0.5 });
+
+		observer.observe(screenThree);
+
+		let animationTimelines = [];
+
+		function startFallingAnimation() {
+			svgContainer.style.display = 'block';
+			const svgPaths = Array.from({length: 7}, (_, i) => `assets/svgs/1 (${i+1}).svg`);
+
+			// Создаем анимацию для 20 элементов
+			animationTimelines = Array.from({length: 100}).map((_, i) => {
+				const img = new Image();
+				img.className = 'falling-svg';
+				img.src = svgPaths[i % svgPaths.length];
+				svgContainer.appendChild(img);
+
+				return createAnimation(img, i);
+			});
+		}
+
+		function resetFallingAnimation() {
+			svgContainer.style.display = 'none';
+			animationTimelines.forEach(tl => tl.kill());
+			svgContainer.innerHTML = '';
+		}
+
+		function createAnimation(element, index) {
+			const startX = Math.random() * window.innerWidth;
+			const rotation = Math.random() * 360;
+			const scale = 0.5 + Math.random() * 0.7;
+			const duration = 8 + Math.random() * 7;
+
+			return gsap.timeline({repeat: -1})
+					.set(element, {
+						x: startX,
+						y: -100,
+						rotation: rotation,
+						scale: scale,
+						opacity: 0.4
+					})
+					.to(element, {
+						y: window.innerHeight + 200,
+						rotation: rotation + 360,
+						duration: duration,
+						ease: "none",
+						modifiers: {
+							x: x => parseFloat(x) + Math.sin(Date.now() * 0.002) * 50
+						},
+						delay: index * 0.3
+					});
+		}
+
+		// Обработчик изменения размера окна
+		window.addEventListener('resize', () => {
+			if (animationTimelines.length > 0) {
+				animationTimelines.forEach(tl => tl.progress(0).kill());
+				resetFallingAnimation();
+				startFallingAnimation();
+			}
+		});
+	});
+</script>
+
+<script>
+//STAGE = 4;
+</script>
